@@ -61,7 +61,7 @@ class RecipeList : AppCompatActivity() {
 
                     recipe.title = title
                     recipe.thumbnail = thumbnail
-                    recipe.ingredients = ingredients
+                    recipe.ingredients = " Ingredients : ${ingredients}"
                     recipe.link = link
 
                     Log.e("result-->",title)

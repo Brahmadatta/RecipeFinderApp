@@ -49,8 +49,8 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>,
 
                     Picasso.get()
                         .load(recipe.thumbnail)
-                        .placeholder(android.R.drawable.menu_frame)
-                        .error(android.R.drawable.stat_notify_error)
+                        .placeholder(R.mipmap.ic_launcher)
+                        .error(R.mipmap.ic_launcher)
                         .into(image)
                 }else{
                 Picasso.get().load(R.drawable.ic_launcher_background).into(image)
