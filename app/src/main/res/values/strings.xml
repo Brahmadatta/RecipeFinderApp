@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RecipeFinderApp</string>
+    <string name="what_would_you_like_to_make">What would you like to make?</string>
+    <string name="ingredients">Ingridients : e.g : Tomato,Sugar etc..</string>
+    <string name="search">Search term : e.g : Vegetables,Pizza etc..</string>
+    <string name="go">Go!</string>
+</resources>
