@@ -1,6 +1,7 @@
 package com.example.recipefinderapp.data
 
 import android.content.Context
+import android.content.Intent
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipefinderapp.R
 import com.example.recipefinderapp.model.Recipe
+import com.example.recipefinderapp.view.ShowLinkActivity
 import com.squareup.picasso.Picasso
 
 class RecipeListAdapter(private val list: ArrayList<Recipe>,
@@ -54,6 +56,13 @@ class RecipeListAdapter(private val list: ArrayList<Recipe>,
                         .into(image)
                 }else{
                 Picasso.get().load(R.drawable.ic_launcher_background).into(image)
+            }
+
+            link.setOnClickListener {
+                var intent = Intent(context,ShowLinkActivity::class.java)
+                intent.putExtra("link",recipe.link.toString())
+                context.startActivity(intent)
+
             }
         }
     }

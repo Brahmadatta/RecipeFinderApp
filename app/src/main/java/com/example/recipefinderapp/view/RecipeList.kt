@@ -12,6 +12,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.recipefinderapp.R
 import com.example.recipefinderapp.data.RecipeListAdapter
+import com.example.recipefinderapp.model.LEFT_LINK
+import com.example.recipefinderapp.model.QUERY
 import com.example.recipefinderapp.model.Recipe
 import kotlinx.android.synthetic.main.activity_recipe_list.*
 import org.json.JSONException
@@ -35,9 +37,26 @@ class RecipeList : AppCompatActivity() {
 
         var urlString = "http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3"
 
+        var url : String?
+
+        var extras = intent.extras
+
+        var ingredients = extras!!.get("ingredients")
+        var search = extras!!.get("searchTerm")
+
+        if (extras != null && !ingredients!!.equals("") && !search!!.equals(""))
+        {
+
+            var tempUrl = LEFT_LINK + ingredients + QUERY + search
+
+            url = tempUrl
+        }else{
+            url = urlString
+        }
+
         volleyRequest = Volley.newRequestQueue(this)
 
-        getRecipe(urlString)
+        getRecipe(url)
     }
 
     fun getRecipe(url : String)
